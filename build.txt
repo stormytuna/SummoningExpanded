@@ -1,0 +1,3 @@
+displayName = Summoning Expanded
+author = stormytuna
+version = 0.1
