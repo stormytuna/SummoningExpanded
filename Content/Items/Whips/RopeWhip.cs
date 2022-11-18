@@ -1,4 +1,5 @@
 ﻿using SummoningExpanded.Content.Projectiles.Whips;
+using Terraria;
 using Terraria.GameContent.Creative;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -14,6 +15,7 @@ namespace SummoningExpanded.Content.Items.Whips {
             Item.DefaultToWhip(ModContent.ProjectileType<RopeWhipProjectile>(), 10, 1f, 6f, 35);
 
             Item.shootSpeed = 4;
+            Item.value = Item.sellPrice(silver: 5);
             Item.rare = ItemRarityID.Blue;
             Item.channel = true;
         }
