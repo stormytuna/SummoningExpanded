@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using SummoningExpanded.Content.Buffs.Whips;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.GameContent;
@@ -18,6 +19,11 @@ namespace SummoningExpanded.Content.Projectiles.Whips {
 
             Projectile.WhipSettings.Segments = 10;
             Projectile.WhipSettings.RangeMultiplier = 0.5f;
+        }
+
+        public override void OnHitNPC(NPC target, int damage, float knockback, bool crit) {
+            target.AddBuff(ModContent.BuffType<RopeWhipDebuff>(), 4 * 60);
+            Main.player[Projectile.owner].MinionAttackTargetNPC = target.whoAmI;
         }
 
         private void DrawLine(List<Vector2> points) {

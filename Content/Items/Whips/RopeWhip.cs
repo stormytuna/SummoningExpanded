@@ -7,6 +7,7 @@ namespace SummoningExpanded.Content.Items.Whips {
     public class RopeWhip : ModItem {
         public override void SetStaticDefaults() {
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
+            Tooltip.SetDefault("2 summon tag damage\nYour summons will focus tagged enemies");
         }
 
         public override void SetDefaults() {
