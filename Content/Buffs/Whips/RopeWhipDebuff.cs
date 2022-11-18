@@ -9,7 +9,7 @@ namespace SummoningExpanded.Content.Buffs.Whips {
         }
 
         public override void Update(NPC npc, ref int buffIndex) {
-
+            npc.GetGlobalNPC<RopeWhipDebuffNPC>().MarkedByRopeWhip = true;
         }
     }
 
@@ -24,7 +24,7 @@ namespace SummoningExpanded.Content.Buffs.Whips {
 
         public override void ModifyHitByProjectile(NPC npc, Projectile projectile, ref int damage, ref float knockback, ref bool crit, ref int hitDirection) {
             if (MarkedByRopeWhip && !projectile.npcProj && !projectile.trap && (projectile.minion || ProjectileID.Sets.MinionShot[projectile.type])) {
-                damage += 5;
+                damage += 2;
             }
         }
     }
